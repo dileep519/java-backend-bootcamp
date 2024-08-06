@@ -18,9 +18,43 @@ Details: 2020 Toyota Camry
 
  */
 
+class Car {
+    public String make;
+    public String model;
+    public Integer year;
+
+    public Car(String newMake, String newModel, Integer newYear) {
+        make = newMake;
+        model = newModel;
+        year = newYear;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public String toString() {
+        return year + " " + make + " " + model;
+    }
+}
+
+
 public class ClassesAndObjects {
 
     public static void main(String[] args) {
+        Car car = new Car("Toyota", "Camry", 2020);
 
+        System.out.println("Make: " + car.getMake());
+        System.out.println("Model: " + car.getModel());
+        System.out.println("Year: " + car.getYear());
+        System.out.println("Details: " + car.toString());
     }
 }
