@@ -11,10 +11,61 @@ package io.javabrains.javabasics;
 7.  Loop through the array of `Animal` objects and print the name, age, and sound of each animal.
  */
 
+class Animal {
+    public String name;
+    public Integer age;
+
+    public Animal(String newName, Integer newAge) {
+        name = newName;
+        age =  newAge;
+    }
+
+    public void makeSound() {
+        System.out.println("Animal barked");
+    }
+}
+
+class Dog extends Animal {
+    private String breed;
+    public Dog(String newName, Integer newAge, String newBreed) {
+        super(newName, newAge);
+        breed=newBreed;
+    }
+
+    @Override
+    public void makeSound() {
+        System.out.println("The dog barks");
+    }
+}
+
+class Cat extends Animal {
+    private Integer lives;
+    public Cat(String newName, Integer newAge, Integer newLives) {
+        super(newName, newAge);
+        lives=newLives;
+    }
+
+    @Override
+    public void makeSound() {
+        System.out.println("The cat meows");
+    }
+}
 
 public class InheritanceChallenge {
 
     public static void main(String[] args) {
+        Animal[] animals = new Animal[4];
 
+        animals[0] = new Animal("Lion", 5);
+        animals[1] = new Dog("Buddy", 3, "Golden Retriever");
+        animals[2] = new Cat("Whiskers", 2, 9);
+        animals[3] = new Animal("Elephant", 10);
+
+        for (Animal animal : animals) {
+            System.out.println("Name: " + animal.name);
+            System.out.println("Age: " + animal.age);
+            animal.makeSound();
+            System.out.println();
+        }
     }
 }
