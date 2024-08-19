@@ -19,6 +19,7 @@ public class Person {
         lastModified = modifiedDate;
     }
 
+    @Override
     public boolean equals(Object obj) {
         if(this == obj) {
             return true;
@@ -32,6 +33,7 @@ public class Person {
                 && age == newPerson.age;
     }
 
+    @Override
     public int hashCode() {
         System.out.println(firstName + lastName + age + lastModified);
         return Objects.hash(firstName, lastName, age);
@@ -44,6 +46,6 @@ public class EqualsAndHashCode {
         Person p1 = new Person("Tester", "one", 23, new Date());
         Person p2 = new Person("Tester", "one", 23, new Date());
         System.out.println("Are both equal " + p1.equals(p2) + " Hash code of obj1 " + p1.hashCode() + " Hash code of obj2 " + p2.hashCode());
-        
+
     }
 }
